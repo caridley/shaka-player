@@ -1,8 +1,14 @@
 {
   "name": "shaka-player",
   "description": "DASH/EME video player library",
-  "version": "3.0.8",
+  "version": "3.0.8-charter",
   "homepage": "https://github.com/google/shaka-player",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://artifactory.spectrumtoolbox.com/artifactory/api/npm/npm"
+  },
   "author": "Google",
   "maintainers": [
     {
