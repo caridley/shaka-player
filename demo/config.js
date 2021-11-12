@@ -359,7 +359,9 @@ shakaDemo.Config = class {
         .addBoolInput_(MessageIds.PREFER_NATIVE_HLS,
             'streaming.preferNativeHls')
         .addBoolInput_(MessageIds.USE_MEDIA_CAPABILITIES,
-            'useMediaCapabilities');
+            'useMediaCapabilities')
+        .addBoolInput_(MessageIds.OBSERVE_QUALITY_CHANGES,
+            'streaming.observeQualityChanges');
 
     if (!shakaDemoMain.getNativeControlsEnabled()) {
       this.addBoolInput_(MessageIds.ALWAYS_STREAM_TEXT,

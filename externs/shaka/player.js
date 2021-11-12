@@ -468,6 +468,48 @@ shaka.extern.ID3Metadata;
  */
 shaka.extern.TimelineRegionInfo;
 
+/**
+ * @typedef {{
+ *   audioSamplingRate: ?number,
+ *   bandwidth: number,
+ *   codecs: string,
+ *   contentType: string,
+ *   frameRate: ?number,
+ *   height: ?number,
+ *   mimeType: ?string,
+ *   channelsCount: ?number,
+ *   pixelAspectRatio: ?string,
+ *   width: ?number
+ * }}
+ *
+ * @description
+ * Contains information about the quality of an audio or video media stream.
+ *
+ * @property {?number} audioSamplingRate
+ *   Specifies the maximum sampling rate of the content.
+ * @property {number} bandwidth
+ *   The bandwidth in bits per second.
+ * @property {string} codecs
+ *   The Stream's codecs, e.g., 'avc1.4d4015' or 'vp9', which must be
+ * compatible with the Stream's MIME type.
+ * @property {string} contentType
+ *   The type of content, which may be "video" or "audio".
+ * @property {?number} frameRate
+ *   The video frame rate.
+ * @property {?number} height
+ *   The video height in pixels.
+ * @property {string} mimeType
+ *   The MIME type.
+ * @property {?number} channelsCount
+ *   The number of audio channels, or null if unknown.
+ * @property {?string} pixelAspectRatio
+ *   The pixel aspect ratio value; e.g "1:1".
+ * @property {?number} width
+ *   The video width in pixels.
+ * @exportDoc
+ */
+shaka.extern.MediaQualityInfo;
+
 
 /**
  * @typedef {{
@@ -776,7 +818,8 @@ shaka.extern.ManifestConfiguration;
  *   lowLatencyMode: boolean,
  *   autoLowLatencyMode: boolean,
  *   forceHTTPS: boolean,
- *   preferNativeHls: boolean
+ *   preferNativeHls: boolean,
+ *   observeQualityChanges: boolean
  * }}
  *
  * @description
@@ -883,7 +926,9 @@ shaka.extern.ManifestConfiguration;
  *   If true, if the protocol is HTTP change it to HTTPs.
  * @property {boolean} preferNativeHls
  *   If true, prefer native HLS playback when possible, regardless of platform.
- *
+ * @property {boolean} observeQualityChanges
+ *   If true, monitor media quality changes and emit
+ *   <code.shaka.Player.MediaQualityChangedEvent</code>.
  * @exportDoc
  */
 shaka.extern.StreamingConfiguration;
