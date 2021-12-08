@@ -1,3 +1,9 @@
+## 3.1.2-charter2 (2021-12-08)
+Enhancements:
+  - Add updateStartTime method to play
+    - https://github.com/google/shaka-player/issues/3434
+    - https://github.com/google/shaka-player/pull/3491
+
 ## 3.1.2-charter1 (2021-12-01)
 
 ## 3.1.2-charter (2021-08-31)
