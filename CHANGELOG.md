@@ -1,4 +1,21 @@
+## 3.1.2-charter3 (2021-12-13)
+
+Enhancements:
+  - Added media quality change events
+    - https://github.com/google/shaka-player/issues/3431
+    - https://github.com/google/shaka-player/pull/3700
+  - Add support for efficient DASH manifest preprocesing
+    - https://github.com/google/shaka-player/issues/3339
+    - https://github.com/google/shaka-player/pull/3480
+
+Bugfixes: 
+  - Correct fix for loss of captions on live DAI streams
+    - https://github.com/google/shaka-player/issues/3783
+    - https://github.com/google/shaka-player/pull/3801
+
+
 ## 3.1.2-charter2 (2021-12-08)
+
 Enhancements:
   - Add updateStartTime method to play
     - https://github.com/google/shaka-player/issues/3434
@@ -6,7 +23,19 @@ Enhancements:
 
 ## 3.1.2-charter1 (2021-12-01)
 
+Bugfixes
+  - Fix loss of captions on live DAI streams
+    - https://github.com/google/shaka-player/issues/3783
+    - https://github.com/google/shaka-player/pull/3801
+
+
 ## 3.1.2-charter (2021-08-31)
+
+Bugfixes:
+  - Fix MEDIA.BUFFER_READ_OUT_OF_BOUNDS error when CEA caption packets are empty
+    - https://github.com/google/shaka-player/issues/3608
+    - https://github.com/google/shaka-player/pull/3609 
+
 
 ## 3.1.2 (2021-07-14)
 
