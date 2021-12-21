@@ -1,3 +1,9 @@
+## 3.1.2-charter4 (2021-12-21)
+Bugfixes
+  - Prioritize bitrate when matching video streams
+    - https://jira.charter.com/browse/STVTVSDK-8086
+
+
 ## 3.1.2-charter3 (2021-12-13)
 
 Enhancements:
