@@ -1,3 +1,9 @@
+## 3.1.2-charter5 (2022-01-06)
+Bugfixes
+  - Fix seek range issues on transition from live to VOD 
+    - cherry-picked from 3.1.4 release
+    - https://github.com/google/shaka-player/issues/3675
+
 ## 3.1.2-charter4 (2021-12-21)
 Bugfixes
   - Prioritize bitrate when matching video streams
