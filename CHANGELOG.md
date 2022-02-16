@@ -1,3 +1,7 @@
+## 3.1.2-charter6 (2022-02-16)
+Bugfixes
+ - Discard media segements when there are caption parsing errors
+
 ## 3.1.2-charter5 (2022-01-06)
 Bugfixes
   - Fix seek range issues on transition from live to VOD 
