@@ -1,3 +1,7 @@
+## 3.1.3-charter7 (2022-02-17)
+Bugfixes
+ - Report embedded caption parsing errors as recoverable
+
 ## 3.1.2-charter6 (2022-02-16)
 Bugfixes
  - Discard media segements when there are caption parsing errors
