@@ -1,4 +1,4 @@
-## 3.1.3-charter7 (2022-02-17)
+## 3.1.2-charter7 (2022-02-17)
 Bugfixes
  - Report embedded caption parsing errors as recoverable
 
