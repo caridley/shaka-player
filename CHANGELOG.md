@@ -1,3 +1,8 @@
+## 3.1.2-charter9 (2022-04-22)
+Bugfixes
+ - fix captions off screen with OVP
+ - fix parsing of pixel aspect ratio 
+
 ## 3.1.2-charter8 (2022-03-28)
 Bugfixes
  - 608 captions, while centered, stay on-row.
