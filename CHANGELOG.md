@@ -1,3 +1,7 @@
+## 3.1.2-charter8 (2022-03-28)
+Bugfixes
+ - 608 captions, while centered, stay on-row.
+
 ## 3.1.2-charter7 (2022-02-17)
 Bugfixes
  - Report embedded caption parsing errors as recoverable
