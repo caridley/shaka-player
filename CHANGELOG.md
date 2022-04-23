@@ -1,7 +1,11 @@
+## 3.1.2-charter10 (2022-04-23)
+Bugfixes
+ - revert pixel apsect ratio parsing change, it really is named "sar"
+
 ## 3.1.2-charter9 (2022-04-22)
 Bugfixes
  - fix captions off screen with OVP
- - fix parsing of pixel aspect ratio 
+ - fix parsing of pixel aspect ratio - use "par" instead of "sar"
 
 ## 3.1.2-charter8 (2022-03-28)
 Bugfixes
