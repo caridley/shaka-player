@@ -819,7 +819,9 @@ shaka.extern.ManifestConfiguration;
  *   autoLowLatencyMode: boolean,
  *   forceHTTPS: boolean,
  *   preferNativeHls: boolean,
- *   observeQualityChanges: boolean
+ *   observeQualityChanges: boolean,
+ *   appendWindowStartAdjustment: number,
+ *   appendWindowEndAdjustment: number
  * }}
  *
  * @description
@@ -929,6 +931,12 @@ shaka.extern.ManifestConfiguration;
  * @property {boolean} observeQualityChanges
  *   If true, monitor media quality changes and emit
  *   <code.shaka.Player.MediaQualityChangedEvent</code>.
+ * @property {number} appendWindowStartAdjustment
+ *   Subtract this number of seconds from the append window start computed
+ *   from the manifest.
+ * @property {number} appendWindowEndAdjustment
+ *   Add this number of seconds to the append window end computed
+ *   from the manifest.
  * @exportDoc
  */
 shaka.extern.StreamingConfiguration;

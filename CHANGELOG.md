@@ -1,3 +1,7 @@
+## 3.1.2-charter11 (2022-04-28)
+Bugfixes
+ - add configurable append window start and end adjustments
+
 ## 3.1.2-charter10 (2022-04-23)
 Bugfixes
  - revert pixel apsect ratio parsing change, it really is named "sar"
