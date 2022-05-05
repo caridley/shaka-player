@@ -1,3 +1,5 @@
+## 3.1.2-charter11a (2022-05-05)
+
 ## 3.1.2-charter11 (2022-04-28)
 Bugfixes
  - add configurable append window start and end adjustments
