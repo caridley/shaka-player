@@ -611,6 +611,22 @@
     "description": "The name of a configuration value.",
     "message": "Observe media quality changes"
   },
+  "DEMO_APPEND_WINDOW_START_ADJUSTMENT": {
+    "description": "The name of a configuration value.",
+    "message": "Append window start adjustment seconds."
+  },
+  "DEMO_APPEND_WINDOW_END_ADJUSTMENT": {
+    "description": "The name of a configuration value.",
+    "message": "Append window end adjustment seconds."
+  },
+  "DEMO_GAP_OVER_JUMP": {
+    "description": "The name of a configuration value.",
+    "message": "Gap overjump seconds."
+  },
+  "DEMO_REPORT_GAP_JUMPS": {
+    "description": "The name of a configuration value.",
+    "message": "Emit gapjump events."
+  },
   "DEMO_OFFLINE": {
     "description": "A tag that marks an asset as being possible to download.",
     "message": "Downloadable"

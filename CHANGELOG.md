@@ -1,3 +1,9 @@
+## 3.1.2-charter12 (2022-05-09)
+Bugfixes
+ - Added streaming.gapOverJump setting
+ - Added streaming.reportGapJumps setting
+ - Support setting append window start and end from demo app settings
+
 ## 3.1.2-charter11 (2022-04-28)
 Bugfixes
  - add configurable append window start and end adjustments
