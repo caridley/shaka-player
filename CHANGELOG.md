@@ -1,3 +1,7 @@
+## 3.1.2-charter12gap1 (2022-05-09)
+Bugfixes
+ - Add streaming.pauseToGetBackInSeekRange setting
+
 ## 3.1.2-charter12 (2022-05-09)
 Bugfixes
  - Added streaming.gapOverJump setting
