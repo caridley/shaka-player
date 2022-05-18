@@ -109,6 +109,7 @@ describe('Cea708Window', () => {
       const caption = window.forceEmit(endTime, serviceNumber);
 
       const topLevelCue = new shaka.text.Cue(startTime, endTime, '');
+      topLevelCue.line = 8;
       topLevelCue.nestedCues = [
         CeaUtils.createDefaultCue(startTime, endTime, text1),
         CeaUtils.createLineBreakCue(startTime, endTime),

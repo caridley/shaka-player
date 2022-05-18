@@ -211,10 +211,16 @@
    * layer, so this should be fine. */
   pointer-events: none;
 
-  /* Place the text container on the bottom of the video container. */
-  bottom: 0%;
+  /* Center this in the middle of the container */
   width: 100%;
   min-width: 48px;
+
+  // Safe space padding
+  padding-left: 5%;
+  padding-right: 5%;
+  top: 2.5%;
+  height: 95;
+  box-sizing: border-box;
 
   /* When the controls fade in or out, it takes 600ms. Thus, when the text
    * container adjusts to the presence or absence of controls, we should wait
