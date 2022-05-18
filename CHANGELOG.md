@@ -1,3 +1,7 @@
+## 3.1.2-charter13 (2022-05-17)
+New Features
+ - Supports CEA 608 caption positioning
+
 ## 3.1.2-charter12gap1 (2022-05-09)
 Bugfixes
  - Add streaming.pauseToGetBackInSeekRange setting
