@@ -1,3 +1,8 @@
+## 3.1.2-charter14 (2022-05-20)
+Bugfixes
+ - Make gap jumping unit test work
+ - Add Charter's shaka-player.d.ts typescript types
+
 ## 3.1.2-charter13 (2022-05-17)
 New Features
  - Supports CEA 608 caption positioning
