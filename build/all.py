@@ -29,6 +29,7 @@ import shakaBuildHelpers
 
 import os
 import re
+import shutil
 
 def compile_less(path_name, main_file_name, parsed_args):
   match = re.compile(r'.*\.less$')
@@ -144,7 +145,12 @@ def main(args):
     if not apps.build_all(parsed_args.force, is_debug):
       return 1
 
+  # Copy Charter's hand made types to dist folder for debug and rleaase builds of
+  # the library.
+  shutil.copyfile('./shaka-player.d.ts', './dist/shaka-player.compiled.debug.d.ts');
+  shutil.copyfile('./shaka-player.d.ts', './dist/shaka-player.compiled.d.ts');
   return 0
 
 if __name__ == '__main__':
   shakaBuildHelpers.run_main(main)
+
