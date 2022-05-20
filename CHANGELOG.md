@@ -1,7 +1,22 @@
+## 3.1.2-charter14 (2022-05-20)
+Bugfixes
+ - Make gap jumping unit test work
+ - Add Charter's shaka-player.d.ts typescript types
+
 ## 3.1.2-charter13 (2022-05-17)
 New Features
  - Supports CEA 608 caption positioning
- 
+
+## 3.1.2-charter12gap1 (2022-05-09)
+Bugfixes
+ - Add streaming.pauseToGetBackInSeekRange setting
+
+## 3.1.2-charter12 (2022-05-09)
+Bugfixes
+ - Added streaming.gapOverJump setting
+ - Added streaming.reportGapJumps setting
+ - Support setting append window start and end from demo app settings
+
 ## 3.1.2-charter11 (2022-04-28)
 Bugfixes
  - add configurable append window start and end adjustments
