@@ -1,3 +1,7 @@
+## 3.1.2-charter15 (2022-05-22)
+Bugfixes
+ - Make gap tolerance configurable
+
 ## 3.1.2-charter14 (2022-05-20)
 Bugfixes
  - Make gap jumping unit test work
