@@ -373,6 +373,9 @@ shakaDemo.Config = class {
             /* canBeDecimal= */ true)
         .addBoolInput_(MessageIds.PAUSE_TO_GET_BACK_INTO_SEEK_RANGE,
             'streaming.pauseToGetBackInSeekRange')
+        .addNumberInput_(MessageIds.GAP_TOLERANCE,
+            'streaming.gapTolerance',
+            /* canBeDecimal= */ true)
         .addBoolInput_(MessageIds.REPORT_GAP_JUMPS,
             'streaming.reportGapJumps');
 

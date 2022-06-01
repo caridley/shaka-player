@@ -824,7 +824,8 @@ shaka.extern.ManifestConfiguration;
  *   observeQualityChanges: boolean,
  *   appendWindowStartAdjustment: number,
  *   appendWindowEndAdjustment: number,
- *   pauseToGetBackInSeekRange: boolean
+ *   pauseToGetBackInSeekRange: boolean,
+ *   gapTolerance: number
  * }}
  *
  * @description
@@ -949,6 +950,8 @@ shaka.extern.ManifestConfiguration;
  * @property {boolean} pauseToGetBackInSeekRange
  *   If true pause playback to get back into seek range after gap
  *   jumping on a live stream.
+ * @property {number} gapTolerance
+ *   Ignore timeline gaps narrower than this value.
  * @exportDoc
  */
 shaka.extern.StreamingConfiguration;

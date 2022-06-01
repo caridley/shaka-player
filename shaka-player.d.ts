@@ -736,6 +736,8 @@ declare module 'shaka-player' {
       gapEnd: number;
       /** Size of the gap in seconds */
       gapSize: number;
+      /** Gap is small and not being jumped */
+      belowTolerance: boolean;
     }
 
     /**
@@ -1777,6 +1779,7 @@ declare module 'shaka-player' {
       appendWindowStartAdjustment?: number;
       appendWindowEndAdjustment?: number;
       pauseToGetBackInSeekRange?: boolean;
+      gapTolerance?: number;
     }
 
     interface Variant {
