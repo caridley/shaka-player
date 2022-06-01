@@ -1,4 +1,4 @@
-## 3.1.2-charter15 (2022-05-22)
+## 3.1.2-charter16 (2022-06-01)
 Bugfixes
  - Make gap tolerance configurable
 
