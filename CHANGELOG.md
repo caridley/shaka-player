@@ -1,3 +1,7 @@
+## 3.1.2-charter17 (2022-07-15)
+Bugfixes
+ - Fix captions are running off for some stream
+
 ## 3.1.2-charter16 (2022-06-01)
 Bugfixes
  - Make gap tolerance configurable
