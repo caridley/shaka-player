@@ -1,3 +1,7 @@
+## 3.1.2-charter18 (2022-07-15)
+Bugfixes
+ - Fix 708 caption decoding
+
 ## 3.1.2-charter17 (2022-07-15)
 Bugfixes
  - Fix captions are running off for some stream
