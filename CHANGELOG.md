@@ -2,7 +2,9 @@
 
 ## [4.1.2-charter1] (2022-08-12)
 ### Bug Fixes
-Update version and configure for publication to artifactory
+* Fix loss of captions on live DAI streams
+* Add deploy step, which copies the shaka distribution to s3://tvsdk-static-staging-bucket/shaka-player/<verison>/ Client can load the library * from https://tvsdk-stage.tvsdk.spectrumtoolbox.com/shaka-player/3.1.2-charter/ (in the case of version 3.1.2-charter)
+* Update version and configure for publication to artifactory
 
 ## [4.1.2](https://github.com/shaka-project/shaka-player/compare/v4.1.1...v4.1.2) (2022-07-14)
 
