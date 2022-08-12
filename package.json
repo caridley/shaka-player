@@ -98,7 +98,8 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "prepublishOnly": "python build/checkversion.py && python build/all.py --force"
+    "prepublishOnly": "python build/checkversion.py && python build/all.py --force",
+    "deploy": "aws s3 cp ./dist s3://tvsdk-static-staging-bucket/shaka-player/$npm_package_version --recursive --profile tvsdkstaging"
   },
   "dependencies": {
     "eme-encryption-scheme-polyfill": "^2.0.5"
