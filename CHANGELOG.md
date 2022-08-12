@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.1.2-charter1] (2022-08-12)
+### Bug Fixes
+Update version and configure for publication to artifactory
+
 ## [4.1.2](https://github.com/shaka-project/shaka-player/compare/v4.1.1...v4.1.2) (2022-07-14)
 
 
