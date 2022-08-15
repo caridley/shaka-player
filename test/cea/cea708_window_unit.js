@@ -236,7 +236,7 @@ describe('Cea708Window', () => {
       for (const c of text) {
         window.setCharacter(c);
       }
-      topLevelCue.textAlign = shaka.text.Cue.textAlign.CENTER;
+      topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
       topLevelCue.nestedCues = [
         CeaUtils.createDefaultCue(startTime, endTime, text),
       ];
