@@ -31,6 +31,9 @@ describe('Cea608Memory', () => {
     const caption = memory.forceEmit(startTime, endTime);
 
     const topLevelCue = new shaka.text.Cue(startTime, endTime, '');
+    topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+    topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+    topLevelCue.line = 1;
     topLevelCue.nestedCues = [
       CeaUtils.createDefaultCue(startTime, endTime, text),
     ];
@@ -82,6 +85,9 @@ describe('Cea608Memory', () => {
     topLevelCue.nestedCues = [
       CeaUtils.createDefaultCue(startTime, endTime, expectedText),
     ];
+    topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+    topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+    topLevelCue.line = 1;
 
     const expectedCaption= {
       stream,
@@ -113,6 +119,9 @@ describe('Cea608Memory', () => {
     }
 
     const topLevelCue = new shaka.text.Cue(startTime, endTime, '');
+    topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+    topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+    topLevelCue.line = 1;
     topLevelCue.nestedCues = [
       CeaUtils.createStyledCue(startTime, endTime,
           expectedText, /* underline= */ true,
@@ -164,6 +173,9 @@ describe('Cea608Memory', () => {
     // ...
     // So we expect that test\n\ntest is emitted
     const topLevelCue = new shaka.text.Cue(startTime, endTime, '');
+    topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+    topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+    topLevelCue.line = 2;
     topLevelCue.nestedCues = [
       CeaUtils.createDefaultCue(startTime, endTime, text),
       CeaUtils.createLineBreakCue(startTime, endTime),
@@ -205,6 +217,9 @@ describe('Cea608Memory', () => {
     memory.eraseChar(); // Erase the last 't' from 'testt'
 
     const topLevelCue = new shaka.text.Cue(startTime, endTime, '');
+    topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+    topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+    topLevelCue.line = 1;
     topLevelCue.nestedCues = [
       CeaUtils.createDefaultCue(startTime, endTime, expectedText),
     ];
@@ -276,6 +291,9 @@ describe('Cea608Memory', () => {
 
       // Expected text is 's\nt\nt\ne'
       const topLevelCue = new shaka.text.Cue(startTime, endTime, '');
+      topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue.line = 3;
       topLevelCue.nestedCues = [
         CeaUtils.createDefaultCue(startTime, endTime, 's'),
         CeaUtils.createLineBreakCue(startTime, endTime),

@@ -65,6 +65,9 @@ describe('CeaDecoder', () => {
 
       const topLevelCue = new shaka.text.Cue(
           startTimeCaption1, startTimeCaption2, '');
+      topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue.line = 13;
       topLevelCue.nestedCues = [
         CeaUtils.createStyledCue(
             startTimeCaption1, startTimeCaption2, expectedText,
@@ -110,6 +113,9 @@ describe('CeaDecoder', () => {
       // Since there are three style changes, there should be three nested cues.
       const topLevelCue = new shaka.text.Cue(
           startTimeCaption1, startTimeCaption2, '');
+      topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue.line = 1;
 
       topLevelCue.nestedCues = [
         CeaUtils.createDefaultCue(
@@ -160,6 +166,9 @@ describe('CeaDecoder', () => {
       // A single nested cue containing yellow, italicized text.
       const topLevelCue = new shaka.text.Cue(startTimeCaption1,
           startTimeCaption2, '');
+      topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue.line = 2;
       topLevelCue.nestedCues = [
         CeaUtils.createStyledCue(
             startTimeCaption1, startTimeCaption2, expectedText,
@@ -199,6 +208,9 @@ describe('CeaDecoder', () => {
 
       const topLevelCue = new shaka.text.Cue(startTimeCaption1,
           startTimeCaption2, '');
+      topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue.line = 1;
       topLevelCue.nestedCues = [
         CeaUtils.createDefaultCue(
             startTimeCaption1, startTimeCaption2, expectedText),
@@ -231,6 +243,9 @@ describe('CeaDecoder', () => {
 
       const topLevelCue = new shaka.text.Cue(startTimeCaption1,
           startTimeCaption2, '');
+      topLevelCue.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue.line = 1;
       topLevelCue.nestedCues = [
         CeaUtils.createDefaultCue(
             startTimeCaption1, startTimeCaption2, expectedText),
@@ -302,7 +317,7 @@ describe('CeaDecoder', () => {
           /* startTime= */ time1, /* endTime= */ time2, '');
       topLevelCue1.nestedCues = [
         CeaUtils.createDefaultCue(
-            /* startTime= */ time1, /* endTime= */ time2, /* payload= */ '1.'),
+            /* startTime= */ time1, /* endTime= */ time2, /* payload= */'1.'),
       ];
 
       // Top level cue corresponding to the second closed caption.
@@ -346,6 +361,26 @@ describe('CeaDecoder', () => {
         CeaUtils.createDefaultCue(
             /* startTime= */ time4, /* endTime= */ time5, /* payload= */ '4.'),
       ];
+
+      topLevelCue1.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue1.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue1.line = 15;
+      topLevelCue1.nestedCues[0].firstNonEmptyCol = 3;
+      topLevelCue2.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue2.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue2.line = 14;
+      topLevelCue2.nestedCues[0].firstNonEmptyCol = 3;
+      topLevelCue2.nestedCues[2].firstNonEmptyCol = 3;
+      topLevelCue3.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue3.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue3.line = 14;
+      topLevelCue3.nestedCues[0].firstNonEmptyCol = 3;
+      topLevelCue3.nestedCues[2].firstNonEmptyCol = 3;
+      topLevelCue4.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue4.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue4.line = 14;
+      topLevelCue4.nestedCues[0].firstNonEmptyCol = 3;
+      topLevelCue4.nestedCues[2].firstNonEmptyCol = 3;
 
       const expectedCaptions = [
         {
@@ -423,6 +458,16 @@ describe('CeaDecoder', () => {
         CeaUtils.createDefaultCue(
             /* startTime= */ 2, /* endTime= */ 3, /* payload= */ '2.'),
       ];
+
+      topLevelCue1.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue1.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue1.line = 15;
+      topLevelCue1.nestedCues[0].firstNonEmptyCol = 3;
+      topLevelCue2.textAlign = shaka.text.Cue.textAlign.LEFT;
+      topLevelCue2.displayAlign = shaka.text.Cue.displayAlign.BEFORE;
+      topLevelCue2.line = 3;
+      topLevelCue2.nestedCues[0].firstNonEmptyCol = 3;
+      topLevelCue2.nestedCues[2].firstNonEmptyCol = 3;
 
       const expectedCaptions = [
         {

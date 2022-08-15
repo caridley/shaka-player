@@ -862,6 +862,8 @@ shaka.extern.ManifestConfiguration;
  *   alwaysStreamText: boolean,
  *   startAtSegmentBoundary: boolean,
  *   gapDetectionThreshold: number,
+ *   gapOverJump: number,
+ *   reportGapJumps: boolean,
  *   durationBackoff: number,
  *   forceTransmuxTS: boolean,
  *   safeSeekOffset: number,
@@ -877,7 +879,11 @@ shaka.extern.ManifestConfiguration;
  *   updateIntervalSeconds: number,
  *   dispatchAllEmsgBoxes: boolean,
  *   observeQualityChanges: boolean,
- *   maxDisabledTime: number
+ *   maxDisabledTime: number,
+ *   appendWindowStartAdjustment: number,
+ *   appendWindowEndAdjustment: number,
+ *   pauseToGetBackInSeekRange: boolean,
+ *   gapTolerance: number
  * }}
  *
  * @description
@@ -919,6 +925,12 @@ shaka.extern.ManifestConfiguration;
  *   TThe maximum distance (in seconds) before a gap when we'll automatically
  *   jump. This value  defaults to <code>0.1</code>, except in Edge Legacy,
  *   Tizen, Chromecast that value defaults value is <code>0.5</code>
+ * @property {number} gapOverJump
+ *   When jumping a gap seek to a position that is <code>gapOverJump</code>
+ *   seconds beyond the end of the gap to avoid looping behaviour that has been
+ *   observed with some streams.
+ * @property {boolean} reportGapJumps
+ *   When true emite a gapjump event when jumping a gap in the media timeline.
  * @property {number} durationBackoff
  *   By default, we will not allow seeking to exactly the duration of a
  *   presentation.  This field is the number of seconds before duration we will
@@ -986,6 +998,17 @@ shaka.extern.ManifestConfiguration;
  *   The maximum time a variant can be disabled when NETWORK HTTP_ERROR
  *   is reached, in seconds.
  *   If all variants are disabled this way, NETWORK HTTP_ERROR will be thrown.
+ * @property {number} appendWindowStartAdjustment
+ *   Subtract this number of seconds from the append window start computed
+ *   from the manifest.
+ * @property {number} appendWindowEndAdjustment
+ *   Add this number of seconds to the append window end computed
+ *   from the manifest.
+ * @property {boolean} pauseToGetBackInSeekRange
+ *   If true pause playback to get back into seek range after gap
+ *   jumping on a live stream.
+ * @property {number} gapTolerance
+ *   Ignore timeline gaps narrower than this value.
  * @exportDoc
  */
 shaka.extern.StreamingConfiguration;

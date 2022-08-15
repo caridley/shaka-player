@@ -1,8 +1,15 @@
 {
   "name": "shaka-player",
   "description": "DASH/EME video player library",
-  "version": "4.1.2",
+  "version": "4.1.2-charter1",
   "homepage": "https://github.com/shaka-project/shaka-player",
+  "files": [
+    "dist",
+    "demo"
+  ],
+  "publishConfig": {
+    "registry": "https://artifactory.spectrumtoolbox.com/artifactory/api/npm/npm"
+  },
   "author": "Google",
   "maintainers": [
     {
@@ -91,7 +98,8 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "prepublishOnly": "python build/checkversion.py && python build/all.py --force"
+    "prepublishOnly": "python build/checkversion.py && python build/all.py --force",
+    "deploy": "aws s3 cp ./dist s3://tvsdk-static-production-bucket/shaka-player/$npm_package_version --recursive --profile tvsdkproduction"
   },
   "dependencies": {
     "eme-encryption-scheme-polyfill": "^2.0.5"

@@ -387,6 +387,11 @@ shaka.extern.Cue = class {
      * @exportDoc
      */
     this.lineBreak;
+
+    /**
+     * @type {number}
+     */
+    this.firstNonEmptyCol = -1;
   }
 };
 

@@ -18,6 +18,14 @@ shaka.test.CeaUtils = class {
     const cue = new shaka.text.Cue(startTime, endTime, payload);
     cue.color = shaka.cea.CeaUtils.DEFAULT_TXT_COLOR;
     cue.backgroundColor = shaka.cea.CeaUtils.DEFAULT_BG_COLOR;
+    if (payload) {
+      for (let i = 0; i < payload.length; i++) {
+        if (payload[i] && payload[i] !== '') {
+          cue.firstNonEmptyCol = i;
+          break;
+        }
+      }
+    }
     return cue;
   }
 
@@ -43,6 +51,14 @@ shaka.test.CeaUtils = class {
     }
     cue.color = textColor;
     cue.backgroundColor = backgroundColor;
+    if (payload) {
+      for (let i = 0; i < payload.length; i++) {
+        if (payload[i] && payload[i] !== '') {
+          cue.firstNonEmptyCol = i;
+          break;
+        }
+      }
+    }
     return cue;
   }
 
