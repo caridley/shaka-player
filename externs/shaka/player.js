@@ -879,8 +879,7 @@ shaka.extern.ManifestConfiguration;
  *   updateIntervalSeconds: number,
  *   dispatchAllEmsgBoxes: boolean,
  *   observeQualityChanges: boolean,
- *   maxDisabledTime: number
- *   observeQualityChanges: boolean,
+ *   maxDisabledTime: number,
  *   appendWindowStartAdjustment: number,
  *   appendWindowEndAdjustment: number,
  *   pauseToGetBackInSeekRange: boolean,
