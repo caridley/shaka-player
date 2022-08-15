@@ -878,6 +878,9 @@ shaka.extern.ManifestConfiguration;
  *   dispatchAllEmsgBoxes: boolean,
  *   observeQualityChanges: boolean,
  *   maxDisabledTime: number
+ *   observeQualityChanges: boolean,
+ *   appendWindowStartAdjustment: number,
+ *   appendWindowEndAdjustment: number
  * }}
  *
  * @description
@@ -986,6 +989,12 @@ shaka.extern.ManifestConfiguration;
  *   The maximum time a variant can be disabled when NETWORK HTTP_ERROR
  *   is reached, in seconds.
  *   If all variants are disabled this way, NETWORK HTTP_ERROR will be thrown.
+ * @property {number} appendWindowStartAdjustment
+ *   Subtract this number of seconds from the append window start computed
+ *   from the manifest.
+ * @property {number} appendWindowEndAdjustment
+ *   Add this number of seconds to the append window end computed
+ *   from the manifest.
  * @exportDoc
  */
 shaka.extern.StreamingConfiguration;
