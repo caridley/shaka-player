@@ -394,7 +394,18 @@ shakaDemo.Config = class {
         .addBoolInput_(MessageIds.OBSERVE_QUALITY_CHANGES,
             'streaming.observeQualityChanges')
         .addNumberInput_(MessageIds.MAX_DISABLED_TIME,
-            'streaming.maxDisabledTime');
+            'streaming.maxDisabledTime')
+        .addNumberInput_(MessageIds.APPEND_WINDOW_START_ADJUSTMENT,
+            'streaming.appendWindowStartAdjustment',
+            /* canBeDecimal= */ true)
+        .addNumberInput_(MessageIds.APPEND_WINDOW_END_ADJUSTMENT,
+            'streaming.appendWindowEndAdjustment',
+            /* canBeDecimal= */ true)
+        .addNumberInput_(MessageIds.GAP_OVER_JUMP,
+            'streaming.gapOverJump',
+            /* canBeDecimal= */ true)
+        .addBoolInput_(MessageIds.REPORT_GAP_JUMPS,
+            'streaming.reportGapJumps');
 
     if (!shakaDemoMain.getNativeControlsEnabled()) {
       this.addBoolInput_(MessageIds.ALWAYS_STREAM_TEXT,
