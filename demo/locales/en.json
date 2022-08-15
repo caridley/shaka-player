@@ -165,6 +165,7 @@
   "DEMO_APPEND_WINDOW_START_ADJUSTMENT": "Append window start adjustment seconds.",
   "DEMO_APPEND_WINDOW_END_ADJUSTMENT": "Append window end adjustment seconds.",
   "DEMO_PAUSE_TO_GET_BACK_INTO_SEEK_RANGE": "Pause to get back into seek range",
+  "DEMO_GAP_TOLERANCE": "Timeline gap tolerance",
   "DEMO_REPORT_GAP_JUMPS": "Report gapjump events.",
   "DEMO_GAP_OVER_JUMP": "Gap overjump seconds.",
   "DEMO_OFFLINE": "Downloadable",

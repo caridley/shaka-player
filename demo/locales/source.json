@@ -659,6 +659,10 @@
     "description": "The name of a configuration value.",
     "message": "Append window end adjustment seconds."
   },
+  "DEMO_GAP_TOLERANCE": {
+    "description": "The name of a configuration value.",
+    "message": "Gap tolerance in seconds"
+  },
   "DEMO_PAUSE_TO_GET_BACK_INTO_SEEK_RANGE": {
     "description": "The name of a configuration value.",
     "message": "Must be true or false."
