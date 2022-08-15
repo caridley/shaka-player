@@ -882,7 +882,8 @@ shaka.extern.ManifestConfiguration;
  *   maxDisabledTime: number
  *   observeQualityChanges: boolean,
  *   appendWindowStartAdjustment: number,
- *   appendWindowEndAdjustment: number
+ *   appendWindowEndAdjustment: number,
+ *   pauseToGetBackInSeekRange: boolean
  * }}
  *
  * @description
@@ -1003,6 +1004,9 @@ shaka.extern.ManifestConfiguration;
  * @property {number} appendWindowEndAdjustment
  *   Add this number of seconds to the append window end computed
  *   from the manifest.
+ * @property {boolean} pauseToGetBackInSeekRange
+ *   If true pause playback to get back into seek range after gap
+ *   jumping on a live stream.
  * @exportDoc
  */
 shaka.extern.StreamingConfiguration;
