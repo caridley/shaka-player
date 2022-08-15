@@ -1,10 +1,112 @@
 # Changelog
 
-## [4.1.2-charter1] (2022-08-12)
-### Bug Fixes
-* Fix loss of captions on live DAI streams
-* Add deploy step, which copies the shaka distribution to s3://tvsdk-static-staging-bucket/shaka-player/<verison>/ Client can load the library * from https://tvsdk-stage.tvsdk.spectrumtoolbox.com/shaka-player/3.1.2-charter/ (in the case of version 3.1.2-charter)
-* Update version and configure for publication to artifactory
+## 4.1.2-charter1 (2022-08-12)
+
+### Cherrypicked changes
+#### 3.1.2-charter18 (2022-07-15)
+Bugfixes
+ - Fix 708 caption decoding
+
+#### 3.1.2-charter17 (2022-07-15)
+Bugfixes
+ - Fix captions are running off for some stream
+
+#### 3.1.2-charter16 (2022-06-01)
+Bugfixes
+ - Make gap tolerance configurable
+
+#### 3.1.2-charter14 (2022-05-20)
+Bugfixes
+ - Make gap jumping unit test work
+ - Add Charter's shaka-player.d.ts typescript types
+
+#### 3.1.2-charter13 (2022-05-17)
+New Features
+ - Supports CEA 608 caption positioning
+
+#### 3.1.2-charter12gap1 (2022-05-09)
+Bugfixes
+ - Add streaming.pauseToGetBackInSeekRange setting
+
+#### 3.1.2-charter12 (2022-05-09)
+Bugfixes
+ - Added streaming.gapOverJump setting
+ - Added streaming.reportGapJumps setting
+ - Support setting append window start and end from demo app settings
+
+#### 3.1.2-charter11 (2022-04-28)
+Bugfixes
+ - add configurable append window start and end adjustments
+
+#### 3.1.2-charter10 (2022-04-23)
+Bugfixes
+ - revert pixel apsect ratio parsing change, it really is named "sar"
+
+#### 3.1.2-charter9 (2022-04-22)
+Bugfixes
+ - fix captions off screen with OVP
+ - fix parsing of pixel aspect ratio - use "par" instead of "sar"
+
+#### 3.1.2-charter8 (2022-03-28)
+Bugfixes
+ - 608 captions, while centered, stay on-row.
+
+#### 3.1.2-charter7 (2022-02-17)
+Bugfixes
+ - Report embedded caption parsing errors as recoverable
+
+#### 3.1.2-charter6 (2022-02-16)
+Bugfixes
+ - Discard media segements when there are caption parsing errors
+
+#### 3.1.2-charter5 (2022-01-06)
+Bugfixes
+  - Fix seek range issues on transition from live to VOD 
+    - cherry-picked from 3.1.4 release
+    - https://github.com/google/shaka-player/issues/3675
+
+#### 3.1.2-charter4 (2021-12-21)
+Bugfixes
+  - Prioritize bitrate when matching video streams
+    - https://jira.charter.com/browse/STVTVSDK-8086
+
+#### 3.1.2-charter3 (2021-12-13)
+
+Enhancements:
+  - Added media quality change events
+    - https://github.com/google/shaka-player/issues/3431
+    - https://github.com/google/shaka-player/pull/3700
+  - Add support for efficient DASH manifest preprocesing
+    - https://github.com/google/shaka-player/issues/3339
+    - https://github.com/google/shaka-player/pull/3480
+
+Bugfixes: 
+  - Correct fix for loss of captions on live DAI streams
+    - https://github.com/google/shaka-player/issues/3783
+    - https://github.com/google/shaka-player/pull/3801
+
+
+#### 3.1.2-charter2 (2021-12-08)
+
+Enhancements:
+  - Add updateStartTime method to play
+    - https://github.com/google/shaka-player/issues/3434
+    - https://github.com/google/shaka-player/pull/3491
+
+#### 3.1.2-charter1 (2021-12-01)
+
+Bugfixes
+  - Fix loss of captions on live DAI streams
+    - https://github.com/google/shaka-player/issues/3783
+    - https://github.com/google/shaka-player/pull/3801
+
+
+#### 3.1.2-charter (2021-08-31)
+
+Bugfixes:
+  - Fix MEDIA.BUFFER_READ_OUT_OF_BOUNDS error when CEA caption packets are empty
+    - https://github.com/google/shaka-player/issues/3608
+    - https://github.com/google/shaka-player/pull/3609 
 
 ## [4.1.2](https://github.com/shaka-project/shaka-player/compare/v4.1.1...v4.1.2) (2022-07-14)
 
