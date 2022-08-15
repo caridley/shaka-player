@@ -2,7 +2,7 @@
 
 ## 4.1.2-charter1 (2022-08-12)
 
-### Cherrypicked changes
+### Cherrypicked changes from v3.1.2-charter-x branch
 #### 3.1.2-charter18 (2022-07-15)
 Bugfixes
  - Fix 708 caption decoding
