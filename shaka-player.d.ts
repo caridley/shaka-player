@@ -1780,6 +1780,8 @@ declare module 'shaka-player' {
       appendWindowEndAdjustment?: number;
       pauseToGetBackInSeekRange?: boolean;
       gapTolerance?: number;
+      correctTimestampOffset?: boolean;
+      maxTimestampDiscrepancy?: number;
     }
 
     interface Variant {
