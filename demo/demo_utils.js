@@ -43,6 +43,7 @@ shakaDemo.Utils = class {
 
     // Override config values that are handled manually.
     overridden.push('abr.enabled');
+    overridden.push('streaming.jumpLargeGaps');
     overridden.push('drm.advanced');
     overridden.push('drm.servers');
 

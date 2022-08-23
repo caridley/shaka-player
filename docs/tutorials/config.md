@@ -73,8 +73,10 @@ player.getConfiguration();
        failureCallback: Function
        ignoreTextStreamFailures: false
        alwaysStreamText: false
+       jumpLargeGaps: false
        rebufferingGoal: 2
        retryParameters: Object
+       smallGapLimit: 0.5
        startAtSegmentBoundary: false
        safeSeekOffset: 5
      textDisplayFactory: Function
