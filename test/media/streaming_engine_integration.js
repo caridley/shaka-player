@@ -403,6 +403,7 @@ describe('StreamingEngine', () => {
   // TODO: Consider also adding tests for missing frames.
   describe('gap jumping', () => {
     it('jumps small gaps at the beginning', async () => {
+      config.smallGapLimit = 5;
       await setupGappyContent(/* gapAtStart= */ 1, /* dropSegment= */ false);
 
       // Let's go!
@@ -418,6 +419,8 @@ describe('StreamingEngine', () => {
     });
 
     it('jumps large gaps at the beginning', async () => {
+      config.smallGapLimit = 1;
+      config.jumpLargeGaps = true;
       await setupGappyContent(/* gapAtStart= */ 5, /* dropSegment= */ false);
 
       // Let's go!
@@ -433,6 +436,7 @@ describe('StreamingEngine', () => {
     });
 
     it('jumps small gaps in the middle', async () => {
+      config.smallGapLimit = 20;
       await setupGappyContent(/* gapAtStart= */ 0, /* dropSegment= */ true);
 
       // Let's go!
@@ -447,9 +451,11 @@ describe('StreamingEngine', () => {
       await waiter.timeoutAfter(60).waitUntilPlayheadReaches(video, 23);
       // Should be close enough to still have the gap buffered.
       expect(video.buffered.length).toBe(2);
+      expect(onEvent).not.toHaveBeenCalled();
     });
 
     it('jumps large gaps in the middle', async () => {
+      config.jumpLargeGaps = true;
       await setupGappyContent(/* gapAtStart= */ 0, /* dropSegment= */ true);
 
       // Let's go!
@@ -464,6 +470,37 @@ describe('StreamingEngine', () => {
       await waiter.timeoutAfter(60).waitUntilPlayheadReaches(video, 23);
       // Should be close enough to still have the gap buffered.
       expect(video.buffered.length).toBe(2);
+      expect(onEvent).toHaveBeenCalled();
+    });
+
+    it('won\'t jump large gaps with preventDefault()', async () => {
+      config.jumpLargeGaps = true;
+      await setupGappyContent(/* gapAtStart= */ 0, /* dropSegment= */ true);
+
+      onEvent.and.callFake((event) => {
+        event.preventDefault();
+      });
+
+      // Let's go!
+      streamingEngine.switchVariant(variant);
+      await streamingEngine.start();
+
+      await waiter.timeoutAfter(5).waitForEvent(video, 'loadeddata');
+
+      let seekCount = 0;
+      eventManager.listen(video, 'seeking', () => {
+        seekCount++;
+      });
+
+      video.currentTime = 8;
+      video.play();
+
+      await shaka.test.Util.delay(5);
+
+      // Edge somehow plays _into_ the gap, and Xbox One plays _through_ the
+      // gap.  Just make sure _we_ don't jump the gap by seeking.  One seek is
+      // required to start playback at time 8.
+      expect(seekCount).toBe(1);
     });
 
     /**

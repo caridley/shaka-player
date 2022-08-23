@@ -864,6 +864,8 @@ shaka.extern.ManifestConfiguration;
  *   gapDetectionThreshold: number,
  *   gapOverJump: number,
  *   reportGapJumps: boolean,
+ *   smallGapLimit: number,
+ *   jumpLargeGaps: boolean,
  *   durationBackoff: number,
  *   forceTransmuxTS: boolean,
  *   safeSeekOffset: number,
@@ -923,7 +925,7 @@ shaka.extern.ManifestConfiguration;
  *   to <code>false</code>.
  * @property {number} gapDetectionThreshold
  *   TThe maximum distance (in seconds) before a gap when we'll automatically
- *   jump. This value  defaults to <code>0.1</code>, except in Edge Legacy,
+ *   jump. This value  defaults to <code>0.1</code>, except in Edge Legacy, IE,
  *   Tizen, Chromecast that value defaults value is <code>0.5</code>
  * @property {number} gapOverJump
  *   When jumping a gap seek to a position that is <code>gapOverJump</code>
@@ -931,6 +933,16 @@ shaka.extern.ManifestConfiguration;
  *   observed with some streams.
  * @property {boolean} reportGapJumps
  *   When true emite a gapjump event when jumping a gap in the media timeline.
+ * @property {number} smallGapLimit
+ *   The limit (in seconds) for a gap in the media to be considered "small".
+ *   Small gaps are jumped automatically without events.  Large gaps result
+ *   in a Player event and can be jumped.
+ * @property {boolean} jumpLargeGaps
+ *   If <code>true</code>, jump large gaps in addition to small gaps.  A
+ *   <code>largegap</code> event will be raised first.  Then, if the app doesn't
+ *   call <code>preventDefault()</code> on the event, the Player will jump the
+ *   gap.  If <code>false</code>, then the event will be raised, but the gap
+ *   will not be jumped.
  * @property {number} durationBackoff
  *   By default, we will not allow seeking to exactly the duration of a
  *   presentation.  This field is the number of seconds before duration we will
