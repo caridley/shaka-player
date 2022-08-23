@@ -60,23 +60,33 @@ describe('TimestampOffsetCorrector', () => {
     mediaSegment = responses[1];
   });
 
+  /** @type shaka.media.TimestampOffsetCorrector */
+  let tsoc;
+
+  let onEvent;
+
+  beforeEach(() => {
+    onEvent = jasmine.createSpy('onEvent');
+    tsoc = new shaka.media.TimestampOffsetCorrector(
+        shaka.test.Util.spyFunc(onEvent));
+  });
+
   describe('checkTimestampOffset()', () => {
     it('does not alter correct timestampOffset', () => {
-      const tsoc = new shaka.media.TimestampOffsetCorrector();
       tsoc.configure(createStreamingConfig(true, 10));
       const segRef =
           createSegmenRefWithTimestampOffset(-baseMediaDecodeTimeSec);
       tsoc.parseTimescalesFromInitSegment(contentType, initSegment);
       const corrected =
           tsoc.checkTimestampOffset(contentType, segRef, mediaSegment);
-      expect(corrected);
+      expect(corrected === false);
       expect(segRef.timestampOffset).toBeCloseTo(
           -baseMediaDecodeTimeSec, 1);
+      expect(onEvent).not.toHaveBeenCalled();
     });
 
     it('corrects timestampOffset that is off by more than ' +
         'maxTimestampDiscrepancy', () => {
-      const tsoc = new shaka.media.TimestampOffsetCorrector();
       tsoc.configure(createStreamingConfig(true, 10));
       const segRef =
           createSegmenRefWithTimestampOffset(-baseMediaDecodeTimeSec + 30);
@@ -85,37 +95,43 @@ describe('TimestampOffsetCorrector', () => {
           tsoc.checkTimestampOffset(contentType, segRef, mediaSegment);
       expect(corrected);
       expect(segRef.timestampOffset).toBeCloseTo(-baseMediaDecodeTimeSec, 1);
+      expect(onEvent).toHaveBeenCalledWith(jasmine.objectContaining({
+        type: 'timestampcorrected',
+        contentType: 'audio',
+        segmentStartTime: 30,
+        referenceStartTime: 0,
+        timestampDiscrepancy: 30,
+      }));
     });
 
     it('does not correct timestampOffset that is off by less than '
         + 'maxTimestampDiscrepancy', () => {
-      const tsoc = new shaka.media.TimestampOffsetCorrector();
       tsoc.configure(createStreamingConfig(true, 10));
       const segRef =
           createSegmenRefWithTimestampOffset(-baseMediaDecodeTimeSec + 5);
       tsoc.parseTimescalesFromInitSegment(contentType, initSegment);
       const corrected =
           tsoc.checkTimestampOffset(contentType, segRef, mediaSegment);
-      expect(corrected);
+      expect(corrected === false);
       expect(segRef.timestampOffset).toBeCloseTo(
           -baseMediaDecodeTimeSec + 5, 1);
+      expect(onEvent).not.toHaveBeenCalled();
     });
 
     it('returns false when timestampOffset has already been corrected', () => {
-      const tsoc = new shaka.media.TimestampOffsetCorrector();
       tsoc.configure(createStreamingConfig(true, 10));
       const segRef =
           createSegmenRefWithTimestampOffset(-baseMediaDecodeTimeSec + 15);
       tsoc.parseTimescalesFromInitSegment(contentType, initSegment);
       tsoc.checkTimestampOffset(contentType, segRef, mediaSegment);
-
+      expect(onEvent).toHaveBeenCalled();
       const corrected =
           tsoc.checkTimestampOffset(contentType, segRef, mediaSegment);
       expect(corrected === false);
+      expect(onEvent).toHaveBeenCalledTimes(1);
     });
 
     it('does not correct timestampOffset when disabled', () => {
-      const tsoc = new shaka.media.TimestampOffsetCorrector();
       tsoc.configure(createStreamingConfig(false, 10));
       const segRef =
           createSegmenRefWithTimestampOffset(-baseMediaDecodeTimeSec + 30);
@@ -125,13 +141,13 @@ describe('TimestampOffsetCorrector', () => {
       expect(corrected === false);
       expect(segRef.timestampOffset).toBeCloseTo(
           -baseMediaDecodeTimeSec + 30, 1);
+      expect(onEvent).not.toHaveBeenCalled();
     });
   });
 
   describe('correctTimestampOffset()', () => {
     it('updates timestampOffset in reference with same original ' +
       'timestampOffset', () => {
-      const tsoc = new shaka.media.TimestampOffsetCorrector();
       tsoc.configure(createStreamingConfig(true, 10));
       const segRef =
           createSegmenRefWithTimestampOffset(-baseMediaDecodeTimeSec + 30);
@@ -148,7 +164,6 @@ describe('TimestampOffsetCorrector', () => {
 
     it('does not update timestampOffset in reference with different ' +
       'original timestampOffset', () => {
-      const tsoc = new shaka.media.TimestampOffsetCorrector();
       tsoc.configure(createStreamingConfig(true, 10));
       const segRef =
           createSegmenRefWithTimestampOffset(-baseMediaDecodeTimeSec + 30);
