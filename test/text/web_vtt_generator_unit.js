@@ -49,6 +49,7 @@ describe('WebVttGenerator', () => {
 
   it('creates style tags for cues with underline/italics/bold', () => {
     const shakaCue = new shaka.text.Cue(10, 20, '');
+    shakaCue.textAlign = shaka.text.Cue.textAlign.CENTER;
 
     // First cue is underlined and italicized.
     const nestedCue1 = new shaka.text.Cue(10, 20, 'Test1');
