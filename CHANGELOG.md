@@ -1,3 +1,7 @@
+## 3.1.2-charter19 (2022-08-23)
+Enhancements
+ - Fix incorrect timestamp offsets
+
 ## 3.1.2-charter18 (2022-07-15)
 Bugfixes
  - Fix 708 caption decoding
