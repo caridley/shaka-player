@@ -1,6 +1,8 @@
 # Changelog
 
-## 4.1.2-charter1 (2022-08-12)
+## [4.1.2-charter1](https://gitlab.spectrumflow.net/tv-ui/shaka-player/-/commit/8ff113da429eb302eba8f649daa7c9d329f7cac7) (2022-08-23)
+Feature
+ - Add back gapjumping options
 
 ### Cherrypicked changes from v3.1.2-charter-x branch
 #### 3.1.2-charter18 (2022-07-15)
