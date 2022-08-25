@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.2-charter2] (should be link to diffs for this version) (2022-08-26)
+Feature
+ - cherrypicked workaround for incorrect presentationTimeOffset in live streams
+ - changed package name to @charter/shaka-player
+ - added support for creating yarn link with name shaka-player instead of @charter/shaka-player using command "nmp run yarnlink"
+
 ## [4.1.2-charter1](https://gitlab.spectrumflow.net/tv-ui/shaka-player/-/commit/8ff113da429eb302eba8f649daa7c9d329f7cac7) (2022-08-23)
 Feature
  - Add back gapjumping options
