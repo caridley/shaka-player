@@ -1,3 +1,11 @@
+## 3.1.2-charter20 (2022-08-24)
+Enhancements
+  - Change package name to @charter/shaka-player
+
+## 3.1.2-charter19 (2022-08-23)
+Enhancements
+ - Fix incorrect timestamp offsets
+
 ## 3.1.2-charter18 (2022-07-15)
 Bugfixes
  - Fix 708 caption decoding

@@ -825,7 +825,9 @@ shaka.extern.ManifestConfiguration;
  *   appendWindowStartAdjustment: number,
  *   appendWindowEndAdjustment: number,
  *   pauseToGetBackInSeekRange: boolean,
- *   gapTolerance: number
+ *   gapTolerance: number,
+ *   correctTimestampOffset: boolean,
+ *   maxTimestampDiscrepancy: number
  * }}
  *
  * @description
@@ -952,6 +954,10 @@ shaka.extern.ManifestConfiguration;
  *   jumping on a live stream.
  * @property {number} gapTolerance
  *   Ignore timeline gaps narrower than this value.
+ * @property {boolean} correctTimestampOffset
+ *   Correct timestamp offsets when they appear to be incorrect
+ * @property {number} maxTimestampDiscrepancy
+ *   Correct timestamp offset when greater than maxTimestampDiscrepancy
  * @exportDoc
  */
 shaka.extern.StreamingConfiguration;

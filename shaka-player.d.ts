@@ -75,6 +75,7 @@ declare module 'shaka-player' {
     'timelineregionadded': Player.TimelineRegionAddedEvent,
     'timelineregionenter': Player.TimelineRegionEnterEvent,
     'timelineregionexit': Player.TimelineRegionExitEvent,
+    'timestampcorrected': Player.TimestampCorrectedEvent,
     'trackschanged': Player.TracksChangedEvent,
     'unloading': Player.UnloadingEvent,
     'variantchanged': Player.VariantChangedEvent,
@@ -722,7 +723,7 @@ declare module 'shaka-player' {
     /**
      * Fired when player jumps a gap in the media timeline.
      */
-     interface GapJumpEvent extends Event {
+    interface GapJumpEvent extends Event {
       type: 'gapjump';
       /** The current time of the playhead. */
       currentTime: number;
@@ -740,6 +741,18 @@ declare module 'shaka-player' {
       belowTolerance: boolean;
     }
 
+    /**
+     * Fired when a timestamp offer is corrected
+     */
+    interface TimestampCorrectedEvent extends Event {
+        type: 'timestampcorrected';
+        contentType: string;
+        segmentStartTime: number;
+        referenceStartTime: number;
+        timestampDiscrepancy: number;
+    }
+    
+    
     /**
      * Fired when the player begins loading.
      * The start of loading is defined as
@@ -1780,6 +1793,8 @@ declare module 'shaka-player' {
       appendWindowEndAdjustment?: number;
       pauseToGetBackInSeekRange?: boolean;
       gapTolerance?: number;
+      correctTimestampOffset?: boolean;
+      maxTimestampDiscrepancy?: number;
     }
 
     interface Variant {
