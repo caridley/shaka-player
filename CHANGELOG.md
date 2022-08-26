@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.1.2-charter3](https://gitlab.spectrumflow.net/tv-ui/shaka-player/) (2022-08-26)
+## [4.1.2-charter2](https://gitlab.spectrumflow.net/tv-ui/shaka-player/) (2022-08-26)
 Feature
  - cherrypicked workaround for incorrect presentationTimeOffset in live streams
  - changed package name to @charter/shaka-player
