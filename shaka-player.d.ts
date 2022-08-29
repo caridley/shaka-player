@@ -1753,6 +1753,7 @@ declare module 'shaka-player' {
     interface ManifestConfiguration {
       retryParameters: RetryParameters;
       availabilityWindowOverride: number; // seconds
+      defaultPresentationDelay: number;
       dash: DashManifestConfiguration;
     }
 
@@ -1761,7 +1762,6 @@ declare module 'shaka-player' {
       clockSyncUri: string;
       ignoreDrmInfo?: boolean;
       xlinkFailGracefully?: boolean;
-      defaultPresentationDelay: number;
       manifestPreprocessor: (mpd: Element) => void;
     }
 
