@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.1.2-charter3](https://gitlab.spectrumflow.net/tv-ui/shaka-player/) (2022-08-29)
+Feature
+  - Move defaultPresentationDelay config field from manifest.dash to manifest in typescript types 
+
 ## [4.1.2-charter2](https://gitlab.spectrumflow.net/tv-ui/shaka-player/) (2022-08-26)
 Feature
  - cherrypicked workaround for incorrect presentationTimeOffset in live streams
