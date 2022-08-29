@@ -1,3 +1,7 @@
+## 3.1.2-charter21 (2022-08-24)
+Enhancements
+  - Move defaultPresentationDelay config field from manifest.dash to manifest in typescript types 
+
 ## 3.1.2-charter20 (2022-08-24)
 Enhancements
   - Change package name to @charter/shaka-player
