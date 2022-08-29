@@ -413,7 +413,12 @@ shakaDemo.Config = class {
             'streaming.gapTolerance',
             /* canBeDecimal= */ true)
         .addBoolInput_(MessageIds.REPORT_GAP_JUMPS,
-            'streaming.reportGapJumps');
+            'streaming.reportGapJumps')
+        .addBoolInput_(MessageIds.CORRECT_TIMESTAMP_OFFSET,
+            'streaming.correctTimestampOffset')
+        .addNumberInput_(MessageIds.MAX_TIMESTAMP_DISCREPANCY,
+            'streaming.maxTimestampDiscrepancy',
+            /* canBeDecimal= */ true);
 
     if (!shakaDemoMain.getNativeControlsEnabled()) {
       this.addBoolInput_(MessageIds.ALWAYS_STREAM_TEXT,
