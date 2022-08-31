@@ -1740,6 +1740,7 @@ declare module 'shaka-player' {
         initData: Uint8Array,
         initDataType: string,
         drmInfo: DrmInfo) => Uint8Array | undefined;
+      parseInbandPssh?: boolean;
     }
 
     interface AdvancedDrmConfiguration {
