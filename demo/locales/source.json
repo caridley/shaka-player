@@ -663,6 +663,10 @@
     "description": "An error displayed if Shaka Player is unable to load due to lack of browser support.",
     "message": "Your browser is not supported!"
   },
+  "DEMO_PARSE_INBAND_PSSH_ENABLED": {
+    "description": "The name of a configuration value.",
+    "message": "Parse inband 'pssh' from media segments"
+  },
   "DEMO_PLAY": {
     "description": "A button to play the attached asset.",
     "message": "Play"

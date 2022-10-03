@@ -153,6 +153,7 @@
   "DEMO_NUMBER_NONZERO_DECIMAL_WARNING": "Must be a positive, nonzero number.",
   "DEMO_NUMBER_NONZERO_INTEGER_WARNING": "Must be a positive, nonzero integer.",
   "DEMO_OBSERVE_QUALITY_CHANGES": "Observe media quality changes",
+  "DEMO_PARSE_INBAND_PSSH_ENABLED": "Parse inband 'pssh' from media segments",
   "DEMO_APPEND_WINDOW_START_ADJUSTMENT": "Append window start adjustment seconds.",
   "DEMO_APPEND_WINDOW_END_ADJUSTMENT": "Append window end adjustment seconds.",
   "DEMO_PAUSE_TO_GET_BACK_INTO_SEEK_RANGE": "Pause to get back into seek range",
