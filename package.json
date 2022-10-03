@@ -82,7 +82,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "prepublishOnly": "python build/checkversion.py && python build/all.py --force",
-    "deploy": "aws s3 cp ./dist s3://tvsdk-static-production-bucket/shaka-player/$npm_package_version --recursive --profile tvsdkproduction"
+    "deploy": "aws s3 cp ./dist s3://tvsdk-static-production-bucket/shaka-player/$npm_package_version --recursive --profile tvsdkproduction",
+    "yarnlink": "ln -f -s $PWD ~/.config/yarn/link/shaka-player"
   },
   "dependencies": {
     "eme-encryption-scheme-polyfill": "^2.0.3"

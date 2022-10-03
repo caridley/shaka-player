@@ -611,7 +611,8 @@ shaka.extern.AdvancedDrmConfiguration;
  *       ((function(!Uint8Array, string, ?shaka.extern.DrmInfo):!Uint8Array)|
  *         undefined),
  *   logLicenseExchange: boolean,
- *   updateExpirationTime: number
+ *   updateExpirationTime: number,
+ *   parseInbandPsshEnabled: boolean
  * }}
  *
  * @property {shaka.extern.RetryParameters} retryParameters
@@ -649,7 +650,11 @@ shaka.extern.AdvancedDrmConfiguration;
  * @property {number} updateExpirationTime
  *   <i>Defaults to 1.</i> <br>
  *   The frequency in seconds with which to check the expiration of a session.
- *
+ * @property {boolean} parseInbandPsshEnabled
+ *   <i>Defaults to false</i><br>
+ *   When true parse DRM init data from pssh boxes in media segments and ignore
+ *   'encrypted' events.
+ *   This is required when using in-band key rotation on Xbox One.
  * @exportDoc
  */
 shaka.extern.DrmConfiguration;
