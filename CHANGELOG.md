@@ -1,3 +1,7 @@
+## 3.1.2-charter22 (2022-10-04)
+Enhancements
+  - Fix in-band key rotation on Xbox by parsing pssh from media segments
+
 ## 3.1.2-charter21 (2022-08-24)
 Enhancements
   - Move defaultPresentationDelay config field from manifest.dash to manifest in typescript types 
